@@ -8,7 +8,7 @@ import { Container } from '@material-ui/core'
 import { theme } from './theme'
 function App() {
   const [timeLength, setTimeLength] = useState(1500)
-  const [timeLeft, setTimeLeft] = useState(2)
+  const [timeLeft, setTimeLeft] = useState(1500)
   const [start, setStart] = useState(false)
   const [tasks, setTasks] = useState([])
   const [showForm, setShowForm] = useState(false)
@@ -138,15 +138,15 @@ function App() {
   }
   return (
     <div style={{ ...appStyle, ...theme[timeLength].main }}>
-      <Container maxWidth="sm" className="wrapper">
+      <Container maxWidth='sm' className='wrapper'>
         <header>
           <audio
-            id="alarm"
-            src="http://bruitages.free.fr/horloges/sonnette_reveil.wav"
+            id='alarm'
+            src='http://bruitages.free.fr/horloges/sonnette_reveil.wav'
           />
           <audio
-            id="click"
-            src="http://soundjay.com/button/sounds/button-30.mp3"
+            id='click'
+            src='http://soundjay.com/button/sounds/button-30.mp3'
           />
         </header>
         <ButtonBar changeTimer={changeTimer} timeLength={timeLength} />
@@ -179,6 +179,7 @@ function App() {
         />
         <BottomBar theme={theme} timeLength={timeLength} tasks={tasks} />
       </Container>
+      <div></div>
     </div>
   )
 }

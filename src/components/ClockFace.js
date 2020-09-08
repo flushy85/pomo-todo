@@ -31,7 +31,7 @@ const ClockFace = ({ theme, timeLength, timeLeft, timer, start, tasks }) => {
   }
 
   const time = {
-    fontSize: '7.5rem',
+    fontSize: '7rem',
     padding: '1rem 0',
   }
 
@@ -57,7 +57,7 @@ const ClockFace = ({ theme, timeLength, timeLeft, timer, start, tasks }) => {
     width: '80%',
     transition: `transform 400ms ease, box-shadow 400ms ease`,
   }
-
+  const displayName = timeLength < 1500 ? 'Break' : 'PomoTime'
   const displayTimeLeft = () => {
     const minutes = Math.floor(timeLeft / 60)
     const seconds = timeLeft % 60 < 10 ? '0' + (timeLeft % 60) : timeLeft % 60
@@ -65,8 +65,9 @@ const ClockFace = ({ theme, timeLength, timeLeft, timer, start, tasks }) => {
     return `${minutes}:${seconds}`
   }
   document.title = `${displayTimeLeft()} - ${
-    tasks.length > 0 ? tasks[0].text : ''
+    tasks.length > 0 ? tasks[0].text : displayName
   }`
+
   return (
     <div style={{ ...display }}>
       <div style={timeGoal}></div>

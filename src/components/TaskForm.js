@@ -18,7 +18,7 @@ const TaskForm = ({
     padding: '30px',
     borderRadius: '5px',
     opacity: 1,
-    transition: 'all 0.3s ease',
+    transition: 'all 0.5s ease-in',
     height: 'auto',
   }
 
@@ -63,7 +63,7 @@ const TaskForm = ({
 
   const [showNotes, setShowNotes] = useState(false)
   return (
-    <Transition in={showForm} timeout={{ enter: 300, exit: 0 }} unmountOnExit>
+    <Transition in={showForm} timeout={{ enter: 0, exit: 0 }} unmountOnExit>
       {(state) => (
         <form
           onSubmit={handleSubmit}
@@ -72,9 +72,9 @@ const TaskForm = ({
           <div style={inputStyle}>
             <TextField
               style={textInputStyle}
-              id="outlined-basic"
-              label="What are you working on?"
-              variant="outlined"
+              id='outlined-basic'
+              label='What are you working on?'
+              variant='outlined'
               value={text}
               required
               onChange={({ target }) => setText(target.value)}
@@ -83,13 +83,13 @@ const TaskForm = ({
             <TextField
               style={numberInputStyle}
               autoFocus={true}
-              type="number"
-              label="Select"
+              type='number'
+              label='Select'
               InputProps={{ inputProps: { min: 1, max: 10 } }}
-              variant="outlined"
+              variant='outlined'
               value={pomo}
               onChange={({ target }) => setPomo(target.value)}
-              helperText="Est time"
+              helperText='Est time'
             />
             {!showNotes ? (
               <button onClick={() => setShowNotes(true)} style={notesButton}>
@@ -99,9 +99,9 @@ const TaskForm = ({
               <FilledInput
                 style={notesInputStyle}
                 multiline={true}
-                label="Select"
+                label='Select'
                 InputProps={{ inputProps: { min: 1, max: 10 } }}
-                placeholder="Some notes..."
+                placeholder='Some notes...'
                 rows={3}
               />
             )}
@@ -120,7 +120,7 @@ const TaskForm = ({
               >
                 cancel
               </Button>
-              <Button style={saveButton} type="submit">
+              <Button style={saveButton} type='submit'>
                 Save
               </Button>
             </div>

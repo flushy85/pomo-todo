@@ -4,6 +4,7 @@ import ClockFace from './components/ClockFace'
 import TopBar from './components/TopBar'
 import Tasks from './components/Tasks'
 import BottomBar from './components/BottomBar'
+import Footer from './components/Footer'
 import { Container } from '@material-ui/core'
 import { theme } from './theme'
 function App() {
@@ -22,7 +23,6 @@ function App() {
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     fontSize: 'calc(10px + 2vmin)',
     color: 'white',
     fontFamily: 'Holtwood One SC',
@@ -137,8 +137,8 @@ function App() {
     setSelected(null)
   }
   return (
-    <div style={{ ...appStyle, ...theme[timeLength].main }}>
-      <Container maxWidth='sm' className='wrapper'>
+    <div style={theme[timeLength].main}>
+      <Container style={appStyle} maxWidth='sm' className='wrapper'>
         <header>
           <audio
             id='alarm'
@@ -178,8 +178,8 @@ function App() {
           handleDone={handleDone}
         />
         <BottomBar theme={theme} timeLength={timeLength} tasks={tasks} />
+        <Footer />
       </Container>
-      <div></div>
     </div>
   )
 }

@@ -24,11 +24,11 @@ const Footer = () => {
     <footer style={footer}>
       <p>Designed and Created by Greg Burdick 2020</p>
       <div style={linkContainer}>
-        <a alt='link to github page' href='https://github.com/flushy85'>
+        <a aria-label='link to github page' href='https://github.com/flushy85'>
           <GitHub style={{ color: 'white', padding: '2px' }} />
         </a>
         <a
-          alt='link to email address'
+          aria-label='link to email address'
           href={`mailto:gregrburdick@protonmail.com`}
         >
           <MailOutline style={{ color: 'white', padding: '2px' }} />

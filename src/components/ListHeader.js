@@ -33,15 +33,19 @@ const ListHeader = ({ setTasks, tasks }) => {
     setAnchorEl(null)
   }
   return (
-    <div>
+    <div className='list header'>
       <ListItem style={headerStyle}>
         <ListItemText>Tasks</ListItemText>
-        <IconButton style={iconStyle} onClick={handleClick}>
+        <IconButton
+          aria-label='task-list options button'
+          style={iconStyle}
+          onClick={handleClick}
+        >
           <MenuIcon />
         </IconButton>
       </ListItem>
       <Menu
-        id="simple-menu"
+        id='simple-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}

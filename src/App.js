@@ -142,11 +142,11 @@ function App() {
         <header>
           <audio
             id='alarm'
-            src='http://bruitages.free.fr/horloges/sonnette_reveil.wav'
+            src='https://bruitages.free.fr/horloges/sonnette_reveil.wav'
           />
           <audio
             id='click'
-            src='http://soundjay.com/button/sounds/button-30.mp3'
+            src='https://soundjay.com/button/sounds/button-30.mp3'
           />
         </header>
         <ButtonBar changeTimer={changeTimer} timeLength={timeLength} />
